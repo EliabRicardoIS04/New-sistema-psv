@@ -8,15 +8,20 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/Per
 
  $repository = new PersonaRepository();
  $persona = new Persona();
- $persona->cedula = 321;
+ /*$persona->cedula = 321;
  $persona->nombres = "ELIAB RICARDO";
  $persona->apellidos = "JARABA RIOS";
  $persona->correo = "eliabrios@gmail.com";
  $persona->contrasena = "Abcd**";
- $persona->usuario = "eliabj";
+ $persona->usuario = "eliabj";*/
+
+
 
  try {
-   @$repository->SavePersona($persona);
+    $persona = @$repository->FindPersonaById("321");
+    echo $persona->cedula;
+    echo $persona->nombres;
+    
    
  } catch (Exception $error) {
     echo $error->getMessage();
