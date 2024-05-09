@@ -6,13 +6,13 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/Pro
 
 $repository = new ProductoRepository();
 
-$producto = new Producto();
-$producto->producto_id = 562;
-$producto->nombre = "camara hd";
-$producto->marca = "lenovo";
-$producto->precio = 170.000;
-$producto->descripcion = "esta es una buena camara";
-$producto->estado = 1;
+$producto = new Producto();/*
+$producto->producto_id = 5414;
+$producto->nombre = "camara 4k";
+$producto->marca = "Acer";
+$producto->precio = 1333332;
+$producto->descripcion = "esta es una buena camara para el dia";
+$producto->estado = 0;
 
 
 try {
@@ -20,4 +20,43 @@ try {
     
   } catch (Exception $error) {
      echo $error->getMessage();
+  }*/
+
+
+  ///testeo de update
+
+  /*$producto = new Producto();
+  $producto->producto_id = 5414;
+  $producto->nombre = "camara 8k";
+  $producto->marca = "Hp";
+  $producto->precio = 1333332;
+  $producto->descripcion = "esta es una buena camara para vacaciones";
+  $producto->estado = 0;
+
+try {
+    @$repository->UpdateProducto($producto);
+    
+  } catch (Exception $error) {
+     echo $error->getMessage();
+  }*/
+
+
+  //testeo delete
+/*
+  try{
+   $repository->DeleteProducto("562");
+
+  }catch(Exception $e){
+   echo $e->getMessage();
+  }*/
+  $p = array();
+
+  //testeo getAll
+
+  try{
+   $p = $repository->GetAllProductos();
+   var_dump($p);
+
+  }catch(Exception $e){
+   echo $e->getMessage();
   }

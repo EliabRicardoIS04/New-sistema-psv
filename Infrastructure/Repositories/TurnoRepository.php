@@ -35,12 +35,32 @@ class TurnoRepository{
         }
     }
 
-    public function UpdateTurno(Turno $Turno) : void{
-        if(is_null($Turno)){
-            throw new Exception("El Turno no puede ser Null al Guardar");
+    public function UpdateTurno(Turno $turno) : void{
+        if(is_null($turno)){
+            throw new Exception("La turno no puede ser Null al Actualizar");
         }
-        $this->FindTurnoById($Turno->CEDULA);
-        $this->SaveTurno($Turno);
+        
+       
+        $turnoExistente = $this->FindTurnoById($turno->id);
+        if($turnoExistente){
+            // Actualizar los atributos de la turno existente
+            //$turnoExistente->CEDULA = $turno->CEDULA;
+            $turnoExistente->nombre = $turno->nombre;
+            $turnoExistente->marca = $turno->marca;
+            $turnoExistente->precio = $turno->precio;
+            $turnoExistente->descripcion = $turno->descripcion;
+            $turnoExistente->estado = $turno->estado;
+           
+            // Actualizar otros atributos según sea necesario
+            
+            // Guardar los cambios en la base de datos
+            $turnoExistente->save();
+            
+            echo "turno actualizada correctamente.";
+        } else {
+            // Manejar el caso donde la turno no existe en la base de datos
+            echo "La turno no existe en la base de datos.";
+        }
     }
 
     public function DeleteTurno(String $id) : void{

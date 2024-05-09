@@ -29,7 +29,7 @@ class ProductoRepository{
             throw new Exception("El ID de la Producto no puede ser Nulo al buscar ");
         }
         try{
-           return Producto::find(array("CEDULA" => $id));
+           return Producto::find(array("producto_id" => $id));
         }catch(Exception $eror){
             throw new Exception("Error: El Producto con ID $id no existe");
         }
@@ -37,10 +37,29 @@ class ProductoRepository{
 
     public function UpdateProducto(Producto $Producto) : void{
         if(is_null($Producto)){
-            throw new Exception("El Producto no puede ser Null al Guardar");
+            throw new Exception("La Producto no puede ser Null al Actualizar");
         }
-        $this->FindProductoById($Producto->CEDULA);
-        $this->SaveProducto($Producto);
+        //echo $Producto->CEDULA;
+       
+        $productoExistente = $this->FindProductoById($Producto->id);
+        if($productoExistente) {
+            // Actualizar los atributos de la Producto existente
+            //$productoExistente->CEDULA = $Producto->CEDULA;
+            $productoExistente->nombre = $Producto->nombre;
+            $productoExistente->marca = $Producto->marca;
+            $productoExistente->precio = $Producto->precio;
+            $productoExistente->descripcion = $Producto->descripcion;
+            $productoExistente->estado = $Producto->estado;
+            // Actualizar otros atributos según sea necesario
+            
+            // Guardar los cambios en la base de datos
+            $productoExistente->save();
+            
+            echo "Producto actualizada correctamente.";
+        } else {
+            // Manejar el caso donde la Producto no existe en la base de datos
+            echo "La Producto no existe en la base de datos.";
+        }
     }
 
     public function DeleteProducto(String $id) : void{
