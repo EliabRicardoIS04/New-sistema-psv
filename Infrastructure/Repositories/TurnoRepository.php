@@ -45,15 +45,13 @@ class TurnoRepository{
         if($turnoExistente){
             // Actualizar los atributos de la turno existente
             //$turnoExistente->CEDULA = $turno->CEDULA;
-            $turnoExistente->nombre = $turno->nombre;
-            $turnoExistente->marca = $turno->marca;
-            $turnoExistente->precio = $turno->precio;
-            $turnoExistente->descripcion = $turno->descripcion;
-            $turnoExistente->estado = $turno->estado;
-           
-            // Actualizar otros atributos según sea necesario
+            $turnoExistente->jornada = $turno->jornada;
+            $turnoExistente->hora_inicio = $turno->hora_inicio;
+            $turnoExistente->hora_fin = $turno->hora_fin;
+            $turnoExistente->fecha = $turno->fecha;
             
-            // Guardar los cambios en la base de datos
+           
+          
             $turnoExistente->save();
             
             echo "turno actualizada correctamente.";

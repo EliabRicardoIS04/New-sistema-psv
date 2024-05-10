@@ -7,5 +7,5 @@ interface ITurnoRepository{
     public function UpdateTurno($turno): void;
     public function FindTurnoById(String $turno_id): Turno;
     public function DeleteTurno(String $turno_id):void;
-    public function FindAll(): array;
+    public function GellAllTurnos(): array;
 }
