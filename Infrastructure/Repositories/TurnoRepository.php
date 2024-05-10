@@ -2,7 +2,7 @@
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities/Turno.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/ITurnoRepository.php";
 
-class TurnoRepository{
+class TurnoRepository implements ITurnoRepository{
 
     public function __constructor(){
 
@@ -29,8 +29,8 @@ class TurnoRepository{
             throw new Exception("El ID de la Turno no puede ser Nulo al buscar ");
         }
         try{
-           return Turno::find(array("CEDULA" => $id));
-        }catch(Exception $eror){
+           return Turno::find(array("turno_id" => $id));
+        }catch(Exception $error){
             throw new Exception("Error: El Turno con ID $id no existe");
         }
     }
