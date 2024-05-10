@@ -1,6 +1,6 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/libs/bdConfig.php";
 
-class TabajadorRecurso extends ActiveRecord\Model{
+class TrabajadorRecurso extends ActiveRecord\Model{
     
 }
