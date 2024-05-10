@@ -2,7 +2,7 @@
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities/Producto.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/IProductoRepository.php";
 
-class ProductoRepository{
+class ProductoRepository implements IProductoRepository{
 
     public function __constructor(){
 
