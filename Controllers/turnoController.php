@@ -52,7 +52,7 @@ class turnoController {
         $turno->FECHA = $fecha;
 
         try {
-            $result = DAOTurno::agregar_turno($turno);
+            
             header("Location: ../views/turno/agregar.php?msg=Turno+Agregado+con+éxito");
             exit();
         } catch(Exception $error) {
