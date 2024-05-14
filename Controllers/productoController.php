@@ -54,7 +54,7 @@ class ProductoController{
 
     }
 
-    public static function FindProduct(){
+    public static function FindProducto(){
         
     }
 
@@ -67,7 +67,7 @@ class ProductoController{
     public static function AllProduct(){
         
     }
-    public static function GetProductByCamp{
+    public static function GetProductByCampo(){
 
     }
 }

@@ -5,7 +5,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/IAdministrador
 class AdministradorSitioRepository implements IAdministradorSitioRepository{
 
     public function __constructor(){
-
+        echo "ejecutando el constructor de AdministradorSitioRepository";
     }
 
     public function SaveAdministradorSitio(AdministradorSitio $AdministradorSitio) : void{
@@ -14,10 +14,11 @@ class AdministradorSitioRepository implements IAdministradorSitioRepository{
         }
         try{
             $AdministradorSitio->save();
+            echo "admin agregado";
         }catch(Exception $error){
             $message = $error->getMessage();
             if(strstr($message, "Duplicate")){
-                throw new Exception("Error: Ya existe un AdministradorSitio con ID $AdministradorSitio->AdministradorSitio_id");
+                throw new Exception("Error: Ya existe un AdministradorSitio con ID $AdministradorSitio->administrador_sitio_id");
             }
             throw new Exception("Error: No fue posible guardar el AdministradorSitio: ".$error->getCode());
            
@@ -29,7 +30,7 @@ class AdministradorSitioRepository implements IAdministradorSitioRepository{
             throw new Exception("El ID de la AdministradorSitio no puede ser Nulo al buscar ");
         }
         try{
-           return AdministradorSitio::find(array("Administrador_Sitio_id" => $id));
+           return AdministradorSitio::find(array("id" => $id));
         }catch(Exception $error){
             throw new Exception("Error: El AdministradorSitio con ID $id no existe");
         }
