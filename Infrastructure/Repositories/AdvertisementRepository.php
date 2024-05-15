@@ -29,9 +29,9 @@ class AdvertisementRepository implements IAdvertisementRepository{
             throw new Exception("El ID de la Advertisement no puede ser Nulo al buscar ");
         }
         try{
-           return Advertisement::find(array("Advertisement_id" => $id));
+           return Advertisement::find(array("publicidad_id" => $id));
         }catch(Exception $error){
-            throw new Exception("Error: El Advertisement con ID $id no existe");
+            throw new Exception("Error: El Advertisement con ID $id no existe".$error->getMessage());
         }
     }
 
@@ -41,7 +41,7 @@ class AdvertisementRepository implements IAdvertisementRepository{
         }
         
        
-        $AdvertisementExistente = $this->FindAdvertisementById($Advertisement->id);
+        $AdvertisementExistente = $this->FindAdvertisementById($Advertisement->publicidad_id);
         if($AdvertisementExistente){
             // Actualizar los atributos de la Advertisement existente
             //$AdvertisementExistente->CEDULA = $Advertisement->CEDULA;

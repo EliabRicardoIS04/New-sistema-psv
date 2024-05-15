@@ -8,4 +8,4 @@ interface IAdvertisementRepository{
     public function UpdateAdvertisement(Advertisement $Advertisement) : void;
     public function DeleteAdvertisement(String $id) : void;
     public function GetAllAdvertisements() : array;
-}
+}   
