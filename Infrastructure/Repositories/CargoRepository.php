@@ -29,7 +29,7 @@ class CargoRepository implements ICargoRepository{
             throw new Exception("El ID de la Cargo no puede ser Nulo al buscar ");
         }
         try{
-           return Cargo::find(array("Cargo_id" => $id));
+           return Cargo::find(array("cargo_id" => $id));
         }catch(Exception $error){
             throw new Exception("Error: El Cargo con ID $id no existe");
         }
@@ -41,19 +41,22 @@ class CargoRepository implements ICargoRepository{
         }
         
        
-        $CargoExistente = $this->FindCargoById($Cargo->id);
+        $CargoExistente = $this->FindCargoById($Cargo->cargo_id);
         if($CargoExistente){
             // Actualizar los atributos de la Cargo existente
             //$CargoExistente->CEDULA = $Cargo->CEDULA;
+            //echo $CargoExistente->cargo_id;
             $CargoExistente->nombre = $Cargo->nombre;
+            //echo $CargoExistente->nombre;
             $CargoExistente->empleado_servicio_id = $Cargo->empleado_servicio_id;
+           // echo $CargoExistente->empleado_servicio_id;
          
             
            
+    
+             $Cargo->save();
           
-            $CargoExistente->save();
-            
-            echo "Cargo actualizada correctamente.";
+             
         } else {
             // Manejar el caso donde la Cargo no existe en la base de datos
             echo "La Cargo no existe en la base de datos.";
