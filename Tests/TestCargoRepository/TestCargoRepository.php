@@ -58,6 +58,7 @@ try{
 $cargos = array();
 
 try{
+    
     $cargos = $repo->GetAllCargos();
     print_r($cargos);
 

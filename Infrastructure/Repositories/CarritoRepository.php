@@ -8,7 +8,7 @@ class CarritoRepository implements ICarritoRepository{
 
     }
 
-    public function SaveCarrito(Carrito $Carrito) : void{
+    public function CreateCarrito(Carrito $Carrito) : void{
         if(is_null($Carrito)){
             throw new Exception("El Carrito no puede ser Null al Guardar");
         }
@@ -76,5 +76,21 @@ class CarritoRepository implements ICarritoRepository{
     
     public function GetAllCarritos() : array{
         return Carrito::all();
+    }
+
+    public function AddProducts($DetalleCarrito): void
+    {
+        if(is_null($DetalleCarrito)){
+            echo "El detalle no puede ser Null para Guardar";
+
+        
+        }
+        try {
+            //code...
+        } catch (Exception $e) {
+            $e->getMessage();
+        }
+
+        
     }
 }
