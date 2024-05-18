@@ -7,7 +7,6 @@ class CarritoRepository implements ICarritoRepository{
     public function __constructor(){
 
     }
-
     public function CreateCarrito(Carrito $Carrito) : void{
         if(is_null($Carrito)){
             throw new Exception("El Carrito no puede ser Null al Guardar");
@@ -74,23 +73,34 @@ class CarritoRepository implements ICarritoRepository{
         }
     }
     
-    public function GetAllCarritos() : array{
+    /*public function GetAllCarritos() : array{
         return Carrito::all();
-    }
-
+    }*/
+    
     public function AddProducts($DetalleCarrito): void
     {
         if(is_null($DetalleCarrito)){
             echo "El detalle no puede ser Null para Guardar";
-
-        
         }
         try {
-            //code...
+           $DetalleCarrito->save();
         } catch (Exception $e) {
             $e->getMessage();
         }
+    }
 
-        
+    public function DeleteProducts(String $id): void
+    {
+        if(is_null($id) || empty($id)){
+            throw new Exception("El id del producto no puede ser Nulo al eliminar ");
+        }
+     
+        $DetalleCarrito = $this->FindCarritoById($id);
+        try{
+            $DetalleCarrito->delete();
+        }catch(Exception $e){
+            throw new Exception("Error: Error al eliminar el Carrito con ID $id ".$e->getMessage());
+        }
     }
 }
+

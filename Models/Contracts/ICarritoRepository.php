@@ -7,7 +7,8 @@ interface ICarritoRepository{
     public function FindCarritoById(String $id) : Carrito;
     public function UpdateCarrito(Carrito $Carrito) : void;
     public function DeleteCarrito(String $id) : void;
-    public function GetAllCarritos() : array;
+   // public function GetAllCarritos() : array;
     public function AddProducts(DetalleCarrito $detalleCarrito): void;
+    public function DeleteProducts(String $id) :void;
 
 }
