@@ -1,9 +1,14 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities/Carrito.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/ICarritoRepository.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/DetalleCarritoRepository.php";
+
+
+
 
 class CarritoRepository implements ICarritoRepository{
 
+    
     public function __constructor(){
 
     }
@@ -79,28 +84,14 @@ class CarritoRepository implements ICarritoRepository{
     
     public function AddProducts($DetalleCarrito): void
     {
-        if(is_null($DetalleCarrito)){
-            echo "El detalle no puede ser Null para Guardar";
-        }
-        try {
-           $DetalleCarrito->save();
-        } catch (Exception $e) {
-            $e->getMessage();
-        }
+        $DetalleRepository = new DetalleCarritoRepository();
+        $DetalleRepository->SaveDetalleCarrito($DetalleCarrito);
     }
+
 
     public function DeleteProducts(String $id): void
     {
-        if(is_null($id) || empty($id)){
-            throw new Exception("El id del producto no puede ser Nulo al eliminar ");
-        }
-     
-        $DetalleCarrito = $this->FindCarritoById($id);
-        try{
-            $DetalleCarrito->delete();
-        }catch(Exception $e){
-            throw new Exception("Error: Error al eliminar el Carrito con ID $id ".$e->getMessage());
-        }
+        $DetalleRepository = new DetalleCarritoRepository();
     }
 }
 
