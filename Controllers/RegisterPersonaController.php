@@ -11,36 +11,8 @@ include_once $_SERVER["DOCUMENT_ROOT"] . "/proaula/Infrastructure/Repositories/T
 include_once $_SERVER["DOCUMENT_ROOT"] . "/proaula/Infrastructure/Repositories/EmpleadoServicioRepository.php";
 
 
-class PersonaController
+class RegisterPersonaController
 {
-
-    public static function accion (){
-        $accion =  @$_REQUEST["accion"];
-        switch ($accion) {
-            case 'Registrar':
-                self::SaveProduct();
-                break;
-            case 'Buscar':
-                self::FindProduct();
-                break;
-            case 'Editar':
-                self::UpdateProduct();
-                break;
-            case 'Eliminar':
-                self::DeteleProduct();
-                break; 
-            case 'listar_todo':
-                self::AllProduct();
-                break;  
-            case 'Consultar':
-                self::GetProductByCampo();
-                break; 
-            default:
-                # code...
-                break;
-        }
-
-    }
 
     public function ClienteRegister()
     {
@@ -83,4 +55,3 @@ class PersonaController
         }
     }
 }
-
