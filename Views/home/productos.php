@@ -2,51 +2,8 @@
  $page1 = "productos";
  
  ?>
-<?php  include("template/encabezado.php");?> 
-    <style>
-        .container{
-            
-            padding:15px;
-            width:700px;
-        }
-        table {
-            color: white;
-            font-size: 14px;
-            table-layout: fixed;
-            border-collapse:collapse;
-        }
 
-        thead{
-            background: #171717;
-        }
-
-        th{
-            padding: 20px 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-         td{
-            padding: 15px;
-             border-bottom: solid 1px rgba(0,0,0,0);
-         }
-
-         tbody , tr:hover{
-           background: #f64b3c;
-
-         }
-         tbody{
-            background-color:#171717;
-         }
-         main{
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           min-height: 100vh;
-            background-image:url("imagenes/fondo5.jpg");
-         background-size: cover;
-        }
-    </style>
+    
     <main>
     <div class="container">
         <br>
@@ -91,4 +48,4 @@
     </main>
 
    
-        <?php include("template/pie.php");?>
+   

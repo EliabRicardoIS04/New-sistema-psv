@@ -1,72 +1,8 @@
 <?php 
  $page = "contactos";
  ?>
-<?php include("template/encabezado.php");?>
-        <style>
-            main{
-                position: relative;
-                top:83px;
-                height:900px;
-               
-            }
-            .contenedor{
-                display:flex;
-                width: 100%;
-                height: 100%;
-                background-color: white;
-                background-image:url("imagenes/fondo2.jpg");
-                background-size: cover;
-                background-position: center;
 
-            }
-            .contactos{
-                position: relative;
-                top: 100px;
-                left: 200px;
-                padding-left: 30px; 
-                padding-top: 180px;
-
-
-                border: solid 1px black;
-                background-color: white;
-                width: 400px;
-                height: 600px;
-                background-image:url("imagenes/fondo2.jpg");
-                background-size: cover;
-                background-position: center;                
-
-            }
-            .contactos p{
-                color:white;
-            }
-
-            .datos{
-                position: relative;
-                top: 150px;
-                margin: 15px;  
-                width:  50%;
-                width: 600px;
-                height: 500px;
-                left:  500px;
-                padding-left: 150px;
-                padding-top: 70px;
-                border: solid 1px black;
-                background-color: white;
-                background-image:url("imagenes/fondo2.jpg");
-                background-size: cover;
-                background-position: center;
-            }
-            .datos label{
-                color: white;
-            }
-            .datos legend{
-                color:white;
-            }
-            .bnt{
-                position: relative;
-                left: 20px;
-            }
-        </style>
+       
         <main>
             <div class = "contenedor">
                 <div class = "contactos">
@@ -100,4 +36,3 @@
             </div>      
         </main>
 
-<?php include("template/pie.php"); ?>
