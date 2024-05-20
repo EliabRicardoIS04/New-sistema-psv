@@ -8,7 +8,7 @@
         <section class="contenedor-1">
         
         <div class="cor">
-        <img src="app/views/img/principalfondo.jpg">     
+        <img src="views/img/principalfondo.jpg">     
         
         <div class="corHijo">
             <h1>Obten tu servicio ahora</h1>

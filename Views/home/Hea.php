@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link style rel = "stylesheet"   type = "text/css" href = "app/views/archivos-css/stylesprincipal.css">
+    <link style rel = "stylesheet"   type = "text/css" href = "views/archivos-css/stylesprincipal.css">
     <title>opera gxc</title>
 </head>
 <body>
@@ -19,26 +19,26 @@
                     <a href = "?p=nosotros">Nosotros</a>
                 </li>
                 <li>
-                    <a href = "?p=servicios.php">Servicios</a>
+                    <a href = "?p=servicios">Servicios</a>
                 </li>
                 <li>
-                    <a href = "?p=productos.php">Productos</a>
+                    <a href = "?p=productos">Productos</a>
                 </li>
                 <li>
-                    <a href = "?p=contactos.php">Contactos</a>
+                    <a href = "?p=contactos">Contactos</a>
                 </li>
                 <li>
                     <div class="line"></div>
                 </li>
                     
                 <li>
-                    <a href = "<?php echo $url3;?>">Login</a>
+                    <a href = "?p=login">Login</a>
                 </li>
                 
                 <li >
                 <div class="imagen" >
                     <div>
-                 <img  src="app/views/img/userempleasos.png">   
+                 <img  src="views/img/userempleasos.png">   
                 </div> 
                 </li>
 
