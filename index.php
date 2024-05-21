@@ -4,10 +4,9 @@
 
     $pagina = isset($_GET['p'])? strtolower($_GET['p']): 'principal' ;
 
-
- include("views/home/hea.php");
+include $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/template/Hea.php";
  
  require_once 'views/home/'.$pagina.'.php';
  
  
-include("views/home/pie.php");
+ include $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/template/pie.php";
