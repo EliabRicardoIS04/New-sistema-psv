@@ -2,6 +2,7 @@
  $page = "nosotros";
  ?>
 
+<<<<<<< HEAD
 <?php include("template/encabezado.php"); ?>
 
         <style>
@@ -162,6 +163,11 @@
             }
             
         </style>
+=======
+
+
+        
+>>>>>>> master
 
         <main>
             <div class = "somos">
@@ -311,4 +317,7 @@
         </main>
 
 
+<<<<<<< HEAD
 <?php include("template/pie.php"); ?>
+=======
+>>>>>>> master

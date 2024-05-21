@@ -2,7 +2,11 @@
 //require_once(__DIR__ . '/../models/vistasModelo.php');
 
 require_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/vistasModelo.php";
+<<<<<<< HEAD
 class VistasController extends vistasModelo{
+=======
+class vistasController extends vistasModelo{
+>>>>>>> master
 
     //controlador para obtener plantilla de la vista
 

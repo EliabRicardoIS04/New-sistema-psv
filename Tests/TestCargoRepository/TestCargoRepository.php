@@ -32,6 +32,7 @@ try{
 
 //testeo update
 $repo = new CargoRepository();
+<<<<<<< HEAD
 /*
 try{
     $cargo = new Cargo();
@@ -64,4 +65,16 @@ try{
 
 }catch(Exception $e){
     echo $e->getMessage();
+=======
+
+try{
+    $cargo = new Cargo();
+    $cargo->cargo_id = '4-5456';
+    echo $cargo->cargo_id;
+    $cargo->nombre = "configurador de camaras";
+    $cargo->empleado_servicio_id = 752;
+    $repo->UpdateCargo($cargo);
+}catch(Exception $e){
+    echo $e->getMessage();
+>>>>>>> master
 }

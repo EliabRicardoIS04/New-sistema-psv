@@ -3,6 +3,7 @@
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/libs/bdConfig.php";
 
 class Cliente extends ActiveRecord\Model{
+<<<<<<< HEAD
 
     static $belongs_to = array(
         array('persona')
@@ -12,4 +13,7 @@ class Cliente extends ActiveRecord\Model{
     static $has_many = array(
         array('carritos','facturas')
     );
+=======
+    
+>>>>>>> master
 }

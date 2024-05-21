@@ -1,10 +1,13 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities/DetalleCarrito.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/IDetalleCarritoRepository.php";
+<<<<<<< HEAD
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/CarritoRepository.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/ProductoRepository.php";
 
 
+=======
+>>>>>>> master
 
 class DetalleCarritoRepository implements IDetalleCarritoRepository{
 
@@ -39,6 +42,7 @@ class DetalleCarritoRepository implements IDetalleCarritoRepository{
         }
     }
 
+<<<<<<< HEAD
     public function FindDetalleCarritoByCarritoId(String $idCarrito){
         if(is_null($idCarrito) || empty($idCarrito)){
             throw new Exception("No se encontro ningun registro");
@@ -70,6 +74,8 @@ class DetalleCarritoRepository implements IDetalleCarritoRepository{
         }
     }
 
+=======
+>>>>>>> master
     public function UpdateDetalleCarrito(DetalleCarrito $DetalleCarrito) : void{
         if(is_null($DetalleCarrito)){
             throw new Exception("La DetalleCarrito no puede ser Null al Actualizar");
@@ -96,6 +102,7 @@ class DetalleCarritoRepository implements IDetalleCarritoRepository{
         }
     }
 
+<<<<<<< HEAD
     public function DeleteDetalleCarrito(String $idProducto, String $idCarrito,String $idCliente) : void{
 
         if(is_null($idCarrito) || empty($idCarrito)){
@@ -119,6 +126,19 @@ class DetalleCarritoRepository implements IDetalleCarritoRepository{
             }
         }
        
+=======
+    public function DeleteDetalleCarrito(String $id) : void{
+        if(is_null($id) || empty($id)){
+            throw new Exception("El ID de la DetalleCarrito no puede ser Nulo al eliminar ");
+        }
+     
+        $DetalleCarrito = $this->FindDetalleCarritoById($id);
+        try{
+            $DetalleCarrito->delete();
+        }catch(Exception $eror){
+            throw new Exception("Error: Error al eliminar el DetalleCarrito con ID $id");
+        }
+>>>>>>> master
     }
     
     public function GetAllDetalleCarritos() : array{

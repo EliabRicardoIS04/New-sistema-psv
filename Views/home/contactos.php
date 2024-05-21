@@ -1,6 +1,7 @@
 <?php 
  $page = "contactos";
  ?>
+<<<<<<< HEAD
 <?php include("template/encabezado.php");?>
         <style>
             main{
@@ -67,6 +68,10 @@
                 left: 20px;
             }
         </style>
+=======
+
+       
+>>>>>>> master
         <main>
             <div class = "contenedor">
                 <div class = "contactos">
@@ -100,4 +105,7 @@
             </div>      
         </main>
 
+<<<<<<< HEAD
 <?php include("template/pie.php"); ?>
+=======
+>>>>>>> master
