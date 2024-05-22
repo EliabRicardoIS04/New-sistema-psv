@@ -7,7 +7,7 @@ $plantilla = new vistasController();
 $vista = $plantilla->obtener_vistas_controller();
 
 //echo $vista;
-require_once $vista;
+//require_once $vista;
 // Incluye la plantilla principal
-//require_once $_SERVER["DOCUMENT_ROOT"] . "/proaula/Views/plantilla.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/proaula/Views/plantilla.php";
 ?>
