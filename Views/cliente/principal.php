@@ -20,7 +20,7 @@ $img = $_SERVER['DOCUMENT_ROOT']."proaula/Views/img/principalfondo.jpg";
                     tu seguridad, cuidamos tu bienestar con
                     productos y servicio de calidad.
                 </p>
-                <a id="boton-1" href="productos.php">
+                <a id="boton-1" href="?views=login">
 
                     OBTEN TUS
                     PRODUCTOS

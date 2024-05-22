@@ -1,4 +1,6 @@
-<?php $css ="/proaula/Views/css/login.css";?>
+<?php $css ="/proaula/Views/css/login.css";
+$controller ="/proaula/Controllers/ClienteController.php";
+?>
 <!DOCTYPE html>
 <html lang="en" class="classHtml">
 
@@ -25,13 +27,13 @@
             encuentres todo lo que buscas!
         </p>
     </div>
-    <form class="classform" action="main/consultas/login.php" method="post">
+    <form class="classform" action="<?php echo $controller; ?>" method="post">
         <img src="assets/images/Icon.png" alt="" srcset="">
         <p>Por favor inicia sesion</p>
-        <input type="email" name="usuario" placeholder="Email" required>
-        <input type="password" name="contrasenia" placeholder="Contraseña" required>
-        <input type="submit" value="Iniciar sesion">
-        <p>¿No tienes una cuenta? <a href = "?p=contactos">Contactos</a>Crea una aquí</p>
+        <input type="email" name="correo" placeholder="Email" required>
+        <input type="password" name="contrasena" placeholder="Contraseña" required>
+        <input type="submit" value="login"  name="accion"  id="accion">
+        <p>¿No tienes una cuenta? <a href ="?views=RegisterCliente">Cree una</a>
         
     </form>
 </div>

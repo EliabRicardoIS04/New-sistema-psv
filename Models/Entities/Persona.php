@@ -6,6 +6,10 @@ class Persona extends ActiveRecord\Model {
         array('administradorsitio','marketingworker','empleadosservicio','cliente')
     );
     
+
+    public function getContrasena() {
+        return $this->contrasena;
+    }
     
 }
 

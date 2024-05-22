@@ -15,7 +15,7 @@ class vistasController extends vistasModelo{
             $respuesta = vistasModelo::obtener_vistas_modelo($ruta[0]);
            // echo "se esta ejecutando esto";
         } else {
-           $respuesta = $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/content/login.php";
+           $respuesta = $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/cliente/principal.php";
            //echo "paso por aqui";
         }
        

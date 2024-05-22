@@ -1,6 +1,7 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities/Cliente.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/IClienteRepository.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/PersonaRepository.php";
 
 class ClienteRepository implements IClienteRepository{
 
@@ -75,5 +76,25 @@ class ClienteRepository implements IClienteRepository{
     
     public function GetAllClientes() : array{
         return Cliente::all();
+    }
+
+    public function AccesoLogin(String $correo,String $contrasena): bool{
+        $personaRepo = new PersonaRepository();
+
+        $persona = new Persona();
+        try{
+        $persona = $personaRepo->FindPersonaByCorreo($correo);
+        if ($persona && $persona->getContrasena() === $contrasena) {
+            echo "cliente encontrado";
+            return true;
+        } else {
+            echo "cliente no encontrado";
+            return false;
+        }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+
     }
 }

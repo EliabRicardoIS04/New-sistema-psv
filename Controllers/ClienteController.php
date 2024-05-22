@@ -35,9 +35,35 @@ class ClienteController
             case 'Consultar':
                 self::GetProductByCampo();
                 break; 
+            case 'login':
+                $this->Accesslogin();
+                break;
             default:
                 # code...
                 break;
+        }
+
+    }
+
+    public function AccessLogin(){
+        $ClienteRepository  = new ClienteRepository();
+
+        $correo     = @$_REQUEST['correo'];
+        $contrasena = @$_REQUEST['contrasena'];
+
+        if(empty(trim($correo)) || empty(trim($contrasena))){
+            echo "los campos estan vacios, no llego nada al controlador";
+        }else{
+            try{
+                if($ClienteRepository->AccesoLogin($correo,$contrasena) == 1){
+                    header("Location: ../Views/cliente/login.php?msg=Acceso+otorgado");
+                    exit();
+                }
+
+            }catch(Exception $e){
+                header("Location: ../Views/cliente/login.php?msg=Acceso+denegado".$e);
+                exit();
+            }
         }
 
     }
@@ -123,6 +149,8 @@ class ClienteController
             }
            */
     }
+
+
 }
 
 $controller = new ClienteController();

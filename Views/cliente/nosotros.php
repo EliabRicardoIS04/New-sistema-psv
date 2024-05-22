@@ -154,7 +154,3 @@
         </main>
 
 
-<<<<<<< HEAD
-<?php include("template/pie.php"); ?>
-=======
->>>>>>> master

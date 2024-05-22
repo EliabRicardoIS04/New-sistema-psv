@@ -5,18 +5,18 @@ class vistasModelo{
     //este modelo nos permite obtener las vistas
 
     protected static function obtener_vistas_modelo($vistas){
-        $lista =["login","principal","productos","contactos","nosotros","principal","servicios","signup"];
+        $lista =["login","principal","productos","contactos","nosotros","principal","servicios","signup","RegisterCliente"];
         if(in_array($vistas,$lista)){
-            if(is_file($_SERVER["DOCUMENT_ROOT"]."/proaula/Views/content/".$vistas.".php")){
-                $contenido = $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/content/".$vistas.".php";
+            if(is_file($_SERVER["DOCUMENT_ROOT"]."/proaula/Views/cliente/".$vistas.".php")){
+                $contenido = $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/cliente/".$vistas.".php";
                // echo $contenido;
             }else{
-                $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/content/404.php";
+                $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/cliente/404.php";
             }
-        }elseif ($vistas=="login" || $vistas == "index") {
-            $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/content/login.php";
+        }elseif ($vistas=="principal" || $vistas == "index") {
+            $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/cliente/principal.php";
         }else{
-            $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/content/404.php";
+            $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/cliente/404.php";
         }
 
         return $contenido;
