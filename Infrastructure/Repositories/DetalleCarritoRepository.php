@@ -1,6 +1,13 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities/DetalleCarrito.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/IDetalleCarritoRepository.php";
+<<<<<<< HEAD
+include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/CarritoRepository.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/ProductoRepository.php";
+
+
+=======
+>>>>>>> master
 
 class DetalleCarritoRepository implements IDetalleCarritoRepository{
 
@@ -35,6 +42,40 @@ class DetalleCarritoRepository implements IDetalleCarritoRepository{
         }
     }
 
+<<<<<<< HEAD
+    public function FindDetalleCarritoByCarritoId(String $idCarrito){
+        if(is_null($idCarrito) || empty($idCarrito)){
+            throw new Exception("No se encontro ningun registro");
+        }
+        try{
+           return DetalleCarrito::find(array("carrito_id" => $idCarrito));
+        }catch(Exception $error){
+            throw new Exception("Error: El DetalleCarrito con ID $idCarrito no existe");
+        }
+    }
+    public function FindDetalleCarritoByProductoId(String $idProducto){
+        if(is_null($idProducto) || empty($idProducto)){
+            throw new Exception("No se encontro ningun registro");
+        }
+        try{
+           return DetalleCarrito::find(array("producto_id" => $idProducto));
+        }catch(Exception $error){
+            throw new Exception("Error: El DetalleCarrito con ID $idProducto no existe");
+        }
+    }
+    public function FindDetalleCarritoByClienteId(String $idCliente){
+        if(is_null($idCliente) || empty($idCliente)){
+            throw new Exception("No se encontro ningun registro");
+        }
+        try{
+           return DetalleCarrito::find(array("cliente_id" => $idCliente));
+        }catch(Exception $e){
+            throw new Exception("Error: El DetalleCarrito con ID $idCliente no existe".$e->getMessage());
+        }
+    }
+
+=======
+>>>>>>> master
     public function UpdateDetalleCarrito(DetalleCarrito $DetalleCarrito) : void{
         if(is_null($DetalleCarrito)){
             throw new Exception("La DetalleCarrito no puede ser Null al Actualizar");
@@ -61,6 +102,31 @@ class DetalleCarritoRepository implements IDetalleCarritoRepository{
         }
     }
 
+<<<<<<< HEAD
+    public function DeleteDetalleCarrito(String $idProducto, String $idCarrito,String $idCliente) : void{
+
+        if(is_null($idCarrito) || empty($idCarrito)){
+            throw new Exception("El ID del carrito puede ser Nulo al eliminar ");
+        }
+        if(is_null($idProducto) || empty($idProducto)){
+            throw new Exception("El ID del producto no puede ser Nulo al eliminar ");
+        }
+        if(is_null($idCliente) || empty($idCliente)){
+            throw new Exception("El ID del cliente no puede ser Nulo al eliminar ");
+        }
+        if(
+        $DetalleCarrito = $this->FindDetalleCarritoByProductoId($idProducto) AND
+        $DetalleCarrito = $this->FindDetalleCarritoByCarritoId($idCarrito) AND
+        $DetalleCarrito = $this->FindDetalleCarritoByClienteId($idCliente)){
+
+            try{
+                $DetalleCarrito->delete();
+            }catch(Exception $e){
+                throw new Exception("Error: Error al eliminar el DetalleCarrito".$e->getMessage());
+            }
+        }
+       
+=======
     public function DeleteDetalleCarrito(String $id) : void{
         if(is_null($id) || empty($id)){
             throw new Exception("El ID de la DetalleCarrito no puede ser Nulo al eliminar ");
@@ -72,6 +138,7 @@ class DetalleCarritoRepository implements IDetalleCarritoRepository{
         }catch(Exception $eror){
             throw new Exception("Error: Error al eliminar el DetalleCarrito con ID $id");
         }
+>>>>>>> master
     }
     
     public function GetAllDetalleCarritos() : array{

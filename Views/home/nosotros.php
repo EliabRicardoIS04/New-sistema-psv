@@ -2,166 +2,9 @@
  $page = "nosotros";
  ?>
 
-<?php include("template/encabezado.php"); ?>
-
-        <style>
-            main{
-                height: 2800px;
-                position: relative;
-                top: 83px;
-                
 
 
-            }
-            h1{
-                color: #02122c;
-                font-size: 45px;
-            }
-            p{
-                color: #484b52;
-                font-weight:bold;
-                font-size: 15px;
-            }
-
-            .circulo{
-                border-radius: 60%;
-                height:200px;
-                width: 200px;
-                background-color: lightblue;
-                display:inline-block;
-                margin: 20px;
-            }
-            .circulo2{
-                border-radius: 60%;
-                height:200px;
-                width: 200px;
-                background-color: #c8c8d8;
-                display:inline-block;
-                margin: 20px;
-            }
-
-            .somos{
-                height: 400px;
-                background-color:rgba(0,0,0,0.3);
-                padding: 10px;
-                text-align: center;
-              
-            }
-          
-            .somos::before{
-                content:"";
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url('imagenes/somos.jpg');
-                background-size: cover;
-                background-position: center;
-                opacity: 0.5;
-                z-index: -1;
-            }
-           
-            .historia{
-                height: 400px;
-                padding: 10px;
-                background-color: #c8c8d8;
-                text-align: center;
-            }
-            .bloque1, .bloque2{
-                display:inline-block;
-            }
-            .bloque1{
-                position: relative;
-                left: 0px;
-                height: 250px;
-                width: 800px;
-                border: dashed 2px white;
-                
-                padding: 10px;
-                bottom:80px;
-            }
-            .bloque1 p{
-                text-align: justify;
-            }
-           
-            .bloque2{
-               height:350px;
-               width: 600px;
-               background-image:url('imagenes/historia.jpg');
-            }
-            
-            .mision{
-                height: 400px;
-               
-                padding:15px;
-                position: relative;
-                display: inline-block;
-                padding: 0;
-                border: solid 1px black;
-            }
-            
-            .mision_text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: white;   
-                background-position: center;
-                
-            }
-           
-            .misionImagen{
-                height: 400px;
-                width: 2000px;
-                opacity: 0.5;
-                background-size:cover;
-            }
-            
-            .vision{
-                height: 400px;
-                padding: 10px;
-                background-color: #c8c8d8;
-                text-align: center;  
-            }
-            .vision_text, .vision_imagen{
-                display:inline-block;
-            }
-            .vision_text{
-                position: relative;
-                left: 0px;
-                height: 150px;
-                width: 800px;
-                border: dashed 2px white;
-                
-                padding: 10px;
-                bottom:100px;
-                margin: 15px;
-            }
-            .vision_text p{
-                text-align: justify;
-            }
-            
-            .vision_imagen{
-               height:350px;
-               width: 600px;
-               background-image:url('imagenes/vision.jpg');
-            }
-            .tipos{
-                height: 600px;
-                padding: 10px;
-                background-color: white;
-                text-align: center;
-            }
-            .valores{
-                height: 600px;
-                padding: 10px;
-                background-color: white;
-                text-align: center;
-            }
-            
-        </style>
+        
 
         <main>
             <div class = "somos">
@@ -311,4 +154,7 @@
         </main>
 
 
+<<<<<<< HEAD
 <?php include("template/pie.php"); ?>
+=======
+>>>>>>> master

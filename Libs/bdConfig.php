@@ -5,7 +5,11 @@ require_once 'php-activerecord/ActiveRecord.php';
  {
     $cfg->set_model_directory($_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities");
      $cfg->set_connections(array(
+<<<<<<< HEAD
+        'development' => 'mysql://root:3015916341Luis@127.0.0.1:3307/service_security'));
+=======
         'development' => 'mysql://root:@localhost/service_security'));
+>>>>>>> master
    $cfg->set_default_connection('development');
  });
 

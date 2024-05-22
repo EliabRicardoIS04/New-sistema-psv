@@ -28,11 +28,19 @@ class CargoRepository implements ICargoRepository{
         if(is_null($id) || empty($id)){
             throw new Exception("El ID de la Cargo no puede ser Nulo al buscar ");
         }
+<<<<<<< HEAD
+        $cargo = Cargo::find(array("cargo_id" => $id));
+        if ($cargo === null) {
+            throw new Exception("Error: El Cargo con ID $id no existe");
+        }
+        return $cargo;
+=======
         try{
            return Cargo::find(array("cargo_id" => $id));
         }catch(Exception $error){
             throw new Exception("Error: El Cargo con ID $id no existe");
         }
+>>>>>>> master
     }
 
     public function UpdateCargo(Cargo $Cargo) : void{
@@ -54,7 +62,11 @@ class CargoRepository implements ICargoRepository{
             
            
     
+<<<<<<< HEAD
+             $CargoExistente->save();
+=======
              $Cargo->save();
+>>>>>>> master
           
              
         } else {

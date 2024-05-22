@@ -32,6 +32,40 @@ try{
 
 //testeo update
 $repo = new CargoRepository();
+<<<<<<< HEAD
+/*
+try{
+    $cargo = new Cargo();
+    $cargo->cargo_id = 1;
+    echo $cargo->cargo_id;
+    $cargo->nombre = "cuidador de dinero money";
+    $cargo->empleado_servicio_id = 321;
+    $repo->UpdateCargo($cargo);
+}catch(Exception $e){
+    echo $e->getMessage();
+}*/
+
+//testeo delete
+/*
+try{
+    $repo->DeleteCargo('5');
+}catch(Exception $e){
+    echo $e->getMessage();
+}*/
+
+
+///testeo GellAll
+
+$cargos = array();
+
+try{
+    
+    $cargos = $repo->GetAllCargos();
+    print_r($cargos);
+
+}catch(Exception $e){
+    echo $e->getMessage();
+=======
 
 try{
     $cargo = new Cargo();
@@ -42,4 +76,5 @@ try{
     $repo->UpdateCargo($cargo);
 }catch(Exception $e){
     echo $e->getMessage();
+>>>>>>> master
 }
