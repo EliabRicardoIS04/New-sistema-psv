@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
   
-    <link rel="stylesheet" href="<?php echo $css?>">
+    <link rel="stylesheet" href="<?php echo $css;?>">
   
 </head>
 <body>
