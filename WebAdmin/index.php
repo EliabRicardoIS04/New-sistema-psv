@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "/proaula/Controllers/AdminVistaController.php";
 
-$plantilla = new vistasController();
+$plantilla = new AdminVistaController();
 
 // Obtén la vista según la URL proporcionada
 $vista = $plantilla->obtener_vistas_controller();

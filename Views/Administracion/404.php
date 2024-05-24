@@ -1,5 +1,5 @@
 <?php
-$atras = "/proaula/Web/";
+$atras = "/proaula/WebAdmin/";
 $css = "/proaula/Views/css/404.css";
 ?>
 <!DOCTYPE html>

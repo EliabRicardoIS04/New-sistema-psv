@@ -1,6 +1,6 @@
 <?php
 
-class vistasModelo{
+class AdminVistaModelo{
 
     //este modelo nos permite obtener las vistas
 
@@ -9,14 +9,15 @@ class vistasModelo{
         if(in_array($vistas,$lista)){
             if(is_file($_SERVER["DOCUMENT_ROOT"]."/proaula/Views/Administracion/".$vistas.".php")){
                 $contenido = $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/Administracion/".$vistas.".php";
-               // echo $contenido;
+                //echo $contenido;
             }else{
                 $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/Administracion/404.php";
             }
-        }elseif ($vistas=="principal" || $vistas == "index") {
-            $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/Administracion/principal.php";
+        }elseif ($vistas=="login" || $vistas == "index") {
+            $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/Administracion/login.php";
         }else{
             $contenido =$_SERVER["DOCUMENT_ROOT"]."/proaula/Views/Administracion/404.php";
+            //echo $contenido;
         }
 
         return $contenido;

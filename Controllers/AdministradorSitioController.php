@@ -51,11 +51,11 @@ class AdministradorSitioController
         } else {
             try {
                 if ($AdminRepository->AccessLogin($correo, $contrasena) == 1) {
-                    header("Location: ../Web/?views=login&msg=Acceso+otorgado");
+                    header("Location: ../WebAdmin/?views=principal&msg=Acceso+otorgado");
 
                     exit();
                 } else {
-                    header("Location: ../Web/?views=login&msg=Acceso+denegado");
+                    header("Location: ../WebAdmin/?views=login&msg=Acceso+denegado");
 
                 }
             } catch (Exception $e) {
@@ -121,3 +121,7 @@ class AdministradorSitioController
     }
 
 }
+
+$controlador = new AdministradorSitioController();
+
+$controlador->accion();
