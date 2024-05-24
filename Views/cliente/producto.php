@@ -8,7 +8,7 @@
     <title>Sobre nosotros</title>
     <link rel="icon" type="image/png" href="../../assets/images/Icon.png">
     <!--Styles-->
-    <link rel="stylesheet" href="../archivos-css/carrito.css">
+    <link rel="stylesheet" href="../css/carrito.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

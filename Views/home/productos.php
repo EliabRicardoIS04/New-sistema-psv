@@ -2,7 +2,6 @@
  $page1 = "productos";
  
  ?>
-<<<<<<< HEAD
 <?php  include("template/encabezado.php");?> 
     <style>
         .container{
@@ -48,10 +47,6 @@
          background-size: cover;
         }
     </style>
-=======
-
-    
->>>>>>> master
     <main>
     <div class="container">
         <br>
@@ -96,8 +91,4 @@
     </main>
 
    
-<<<<<<< HEAD
-        <?php include("template/pie.php");?>
-=======
-   
->>>>>>> master
+    
