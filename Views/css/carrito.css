@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --header-color: #f4f4f5;
+    --models-section-color: #f4f4f4;
+    --btn-color: #1e2832;
+    --btn-hover: #c31432;
+    --dark-blue: #0a183d;
+    --tipo-prenda: #dcdcdc;
+}
+
+body {
+    background-color: ghostwhite;
+}
+
+header {
+    width: 100%;
+    height: 6.8rem;
+    background-color: var(--header-color);
+}
+
+.header-intro {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #dcdcdc;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+}
+
+.header-intro>* {
+    margin: 2rem;
+}
+
+.link-inicio {
+    font-size: 2em;
+    font-weight: 300;
+    color: var(--dark-blue);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
+
+.header-intro>form {
+    margin-left: -5rem;
+    margin-right: -2rem;
+    margin-top: .1.5rem;
+}
+
+
+.buscar-input {
+    border: 1px solid var(--dark-blue);
+    width: 15rem;
+    height: 1.5rem;
+    font-size: 1.2em;
+    padding: 0.5rem;
+}
+
+.buscar-input:focus {
+    outline: 1px solid #191970;
+}
+
+.buscar {
+    height: 1.7rem;
+    width: 5rem;
+    border: none;
+    background-color: var(--btn-color);
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.buscar:hover {
+    background-color: var(--btn-hover);
+}
+
+.link-carrito {
+    margin-top: 2.9rem;
+    text-decoration: none;
+    color: var(--dark-blue);
+    letter-spacing: 0.1em;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row: 1fr;
+    width: 70%;
+    gap: 2rem 1rem;
+    margin: 5rem auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.container form{
+    background-color: #fff;
+    width: 90%;
+    height: 24rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.container form:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    cursor: pointer;
+}
+
+.container img{
+    display: block;
+    width: 90%;
+    height: 18rem;
+    margin: 1rem auto;
+    object-fit: cover;
+    background-color: lightblue;
+}
+
+.nombre-producto{
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.precio-producto{
+    margin-left: 1rem;
+    font-weight: 400;
+}
+
+.btn-eliminar{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.3rem;
+    width: 70px;
+    text-align: center;
+    left: 70%;
+    bottom: 10%;
+    background-color: #c31432;
+    color: #fff;
+    border: none;
+    height: 1.87rem;
+
+}
+
+.btn-eliminar:hover{
+    background-color: crimson;
+}
+
+.total{
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.btn-comprar{
+    border: none;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    background-color: navy;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    float: right;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+}
+
+.btn-comprar:hover{
+    background-color: #191970;
+}
+
+.form-envio{
+    display: none;
+    position: relative;
+    top: 0;
+}
+
+.form-envio input, select{
+    border: 1px solid #191970;
+    height: 1.8rem;
+    width: 80%;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+h2{
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--dark-blue);
+}
+
+.form-envio label{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-envio input[type = "submit"]{
+    border: none;
+    width: 25%;
+    height: 2.2rem;
+    margin: auto;
+    background-color: forestgreen;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 0.2rem;
+}
+
+.form-envio p{
+    margin-bottom: 1.3rem;
+}
+
+.form-visible{
+    background-color: var(--header-color);
+    display: block;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 2rem 2rem 2rem 4rem;
+    position: absolute;
+    left: 30%;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+}
+
+.btn-salir{
+    align-self: flex-end;
+    width: 2rem;
+    height: 2rem;
+    background-color: #8b0000;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.btn-salir:hover{
+    background-color: #c31432;
+}

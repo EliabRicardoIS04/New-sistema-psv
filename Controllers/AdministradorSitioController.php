@@ -9,7 +9,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . "/proaula/Models/Entities/Administrador
 class AdministradorSitioController
 {
     public function accion()
-
+    
     {
         $accion =  @$_REQUEST["accion"];
         switch ($accion) {

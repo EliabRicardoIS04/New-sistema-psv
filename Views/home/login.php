@@ -24,12 +24,12 @@
             encuentres todo lo que buscas!
         </p>
     </div>
-    <form class="classform" action="main/consultas/login.php" method="post">
+    <form class="classform" action="Views/home/market.php" method="post">
         <img src="assets/images/Icon.png" alt="" srcset="">
         <p>Por favor inicia sesion</p>
         <input type="email" name="usuario" placeholder="Email" required>
         <input type="password" name="contrasenia" placeholder="Contraseña" required>
-        <input type="submit" value="Iniciar sesion">
+        <input type="submit" href = "market.php">
         <p>¿No tienes una cuenta? <a href = "?p=contactos">Contactos</a>Crea una aquí</p>
         
     </form>
