@@ -17,19 +17,19 @@ class AdministradorSitioController
                 $this->AdminRegister();
                 break;
             case 'Buscar':
-                $this->FindProduct();
+                //$this->FindProduct();
                 break;
             case 'Editar':
-                self::UpdateProduct();
+                //self::UpdateProduct();
                 break;
             case 'Eliminar':
-                self::DeteleProduct();
+               // self::DeteleProduct();
                 break;
             case 'listar_todo':
-                self::AllProduct();
+              //  self::AllProduct();
                 break;
             case 'Consultar':
-                self::GetProductByCampo();
+               // self::GetProductByCampo();
                 break;
             case 'login':
                 $this->Accesslogin();
@@ -119,4 +119,5 @@ class AdministradorSitioController
         }
 
     }
+
 }

@@ -11,6 +11,8 @@ class Persona extends ActiveRecord\Model {
         return $this->contrasena;
     }
     
+
+   
 }
 
 

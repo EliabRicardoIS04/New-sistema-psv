@@ -78,4 +78,15 @@ class ProductoRepository implements IProductoRepository{
     public function GetAllProductos() : array{
         return Producto::all();
     }
+
+    public function FindProductoByName(String $nombre): Producto{
+        if(is_null($nombre) || empty($nombre)){
+            throw new Exception("El Nombre del Producto no puede ser Nulo al buscar ");
+        }
+        try{
+           return Producto::find(array("nombre" => $nombre));
+        }catch(Exception $eror){
+            throw new Exception("Error: El Producto con nombre $nombre no existe".$eror->getMessage());
+        }
+    }
 }
