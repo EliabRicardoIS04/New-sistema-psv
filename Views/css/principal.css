@@ -1,0 +1,38 @@
+
+
+/* Estilos para la sección principal */
+.main-content {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.main-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-content h1 {
+    color: #343a40;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    color: #666666;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}

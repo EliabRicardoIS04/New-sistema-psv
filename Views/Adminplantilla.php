@@ -1,6 +1,4 @@
-
-    <!-- Contenido dinámico -->
-    <?php
+<?php
     $css_files = [
         'principal' => 'stylesprincipal.css',
         'nosotros' => 'stylesnosotros.css',
@@ -19,15 +17,13 @@
     //echo $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/content/404.php";
    
 
-    if(str_contains($vista,"404.php") || str_contains($vista,"login.php") || str_contains($vista,"RegisterCliente.php")){
+    if(str_contains($vista,"404.php") ||str_contains($vista,"login.php") ){
         require_once $vista;
     }else{
-        include $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/template/Hea.php";
+        include $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/template/AdminHeader.php";
         require_once $vista;
-        include $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/template/pie.php";
+       // include $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/template/AdminFooter.php";
 
     }
 
     ?>
-
- 
