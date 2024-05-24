@@ -18,8 +18,6 @@ class vistasController extends vistasModelo{
            $respuesta = $_SERVER["DOCUMENT_ROOT"]."/proaula/Views/cliente/principal.php";
            //echo "paso por aqui";
         }
-       
-       
         return $respuesta;
     }
 }

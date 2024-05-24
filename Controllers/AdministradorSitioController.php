@@ -8,8 +8,8 @@ include_once $_SERVER["DOCUMENT_ROOT"] . "/proaula/Models/Entities/Administrador
 
 class AdministradorSitioController
 {
-
     public function accion()
+
     {
         $accion =  @$_REQUEST["accion"];
         switch ($accion) {
@@ -85,12 +85,12 @@ class AdministradorSitioController
         $persona->telefono       = @$_REQUEST['telefono'];
     
         $Admin->id               = $persona->cedula;
-        $Admin->sueldo           = @$_REQUEST['sueldo'];
-        $Admin->horario          = @$_REQUEST['horario'];
+        $Admin->horario           = @$_REQUEST['horario'];
+       
        
         $datos = array();
         $datos = [$persona->cedula, $persona->nombres, $persona->apellidos,$persona->correo ,$persona->contrasena, $persona->usuario ,$persona->celular
-        , $persona->telefono ,$Admin->id ,$Admin->sueldo , $Admin->horario];
+        , $persona->telefono ,$Admin->id ,$Admin->horario];
 
       
         foreach($datos as $indice => $valo){
@@ -108,11 +108,12 @@ class AdministradorSitioController
             try {
                 $PersonaRepository->SavePersona($persona);
                 $AdminRepository->SaveAdministradorSitio($Admin);
-                header("Location: ../views/Login/RegisterCliente.php?msg=Agregado+con+éxito");
+                header("Location: ../WebAdmin/?views=login&msg=Registrado+Exitosamente");
                 exit();
 
             } catch (Exception $error) {
-                header("Location: ../views/Login/RegisterCliente.php?msg=".$error->getMessage());
+                header("Location: ../WebAdmin/?views=AdminRegister&msg=El+Registro+Fallo");
+                echo $error->getMessage();
                 exit();
             }
           
