@@ -36,6 +36,38 @@ class PersonaRepository implements IPersonaRepository{
         }
     }
 
+    public function FindPersonaByCorreo(String $correo) : Persona {
+        if (is_null($correo) || empty($correo)) {
+            throw new Exception("El correo de la Persona no puede ser Nulo al buscar");
+        }
+    
+        try {
+            $persona = Persona::find(array("correo" => $correo));
+            if ($persona === null) {
+                throw new Exception("La Persona con correo $correo no existe");
+            }
+            return $persona;
+        } catch (Exception $error) {
+            throw new Exception("Error al buscar la Persona con correo $correo: " . $error->getMessage());
+        }
+    }
+    
+    public function FindPersonaByContrasena(String $contrasena) : Persona{
+        if(is_null($contrasena) || empty($contrasena)){
+            throw new Exception("la contraseña de la Persona no puede ser Nulo al buscar ");
+        }
+   
+        try{
+            $persona = Persona::find(array("contrasena" => $contrasena));
+            if ($persona === null) {
+                throw new Exception("La Persona con contraseña $contrasena no existe");
+            }
+            return $persona;
+        }catch(Exception $error){
+            throw new Exception("Error: La Persona con contraseña $contrasena no existe".$error->getMessage());
+        }
+    }
+
     public function UpdatePersona(Persona $persona) : void{
         if(is_null($persona)){
             throw new Exception("La Persona no puede ser Null al Actualizar");

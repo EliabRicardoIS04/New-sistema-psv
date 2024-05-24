@@ -82,4 +82,15 @@ class ProductoinventarioRepository implements IProductoinventarioRepository{
     public function GetAllProductoinventarios() : array{
         return Productoinventario::all();
     }
+
+    public function FindProductoInventarioByName(String $nombre): ProductoInventario{
+        if(is_null($nombre) || empty($nombre)){
+            throw new Exception("El nombre del Productoinventario no puede ser Nulo al buscar");
+        }
+        try{
+           return Productoinventario::find(array("nombre" => $nombre));
+        }catch(Exception $error){
+            throw new Exception("Error: El Productoinventario con nombre $nombre no existe".$error->getMessage());
+        }
+    }
 }

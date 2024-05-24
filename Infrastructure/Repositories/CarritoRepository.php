@@ -1,7 +1,6 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Entities/Carrito.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Models/Contracts/ICarritoRepository.php";
-<<<<<<< HEAD
 include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/DetalleCarritoRepository.php";
 
 
@@ -14,16 +13,6 @@ class CarritoRepository implements ICarritoRepository{
 
     }
     public function CreateCarrito(Carrito $Carrito) : void{
-=======
-
-class CarritoRepository implements ICarritoRepository{
-
-    public function __constructor(){
-
-    }
-
-    public function SaveCarrito(Carrito $Carrito) : void{
->>>>>>> master
         if(is_null($Carrito)){
             throw new Exception("El Carrito no puede ser Null al Guardar");
         }
@@ -89,7 +78,6 @@ class CarritoRepository implements ICarritoRepository{
         }
     }
     
-<<<<<<< HEAD
     /*public function GetAllCarritos() : array{
         return Carrito::all();
     }*/
@@ -107,9 +95,3 @@ class CarritoRepository implements ICarritoRepository{
     }
 }
 
-=======
-    public function GetAllCarritos() : array{
-        return Carrito::all();
-    }
-}
->>>>>>> master

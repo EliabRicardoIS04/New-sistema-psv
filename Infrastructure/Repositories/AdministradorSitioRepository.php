@@ -76,4 +76,23 @@ class AdministradorSitioRepository implements IAdministradorSitioRepository{
     public function GetAllAdministradorSitios() : array{
         return AdministradorSitio::all();
     }
+
+    public function AccessLogin(String $correo, String $contrasena) : bool{
+        $personaRepo = new PersonaRepository();
+
+        $persona = new Persona();
+        try{
+        $persona = $personaRepo->FindPersonaByCorreo($correo);
+        if ($persona && $persona->getContrasena() === $contrasena) {
+            echo "Administrador encontrado";
+            return true;
+        } else {
+            echo "Administrador no encontrado";
+            return false;
+        }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }

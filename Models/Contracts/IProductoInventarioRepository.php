@@ -8,4 +8,5 @@ interface IProductoInventarioRepository{
     public function UpdateProductoInventario(ProductoInventario $ProductoInventario) : void;
     public function DeleteProductoInventario(String $id) : void;
     public function GetAllProductoInventarios() : array;
+    public function FindProductoInventarioByName(String $nombre): ProductoInventario;
 }

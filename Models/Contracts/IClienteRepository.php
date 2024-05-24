@@ -8,4 +8,5 @@ interface IClienteRepository{
     public function UpdateCliente(Cliente $Cliente) : void;
     public function DeleteCliente(String $id) : void;
     public function GetAllClientes() : array;
+    public function AccesoLogin(String $correo,String $contrasena) : bool;
 }

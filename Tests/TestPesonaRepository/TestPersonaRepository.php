@@ -34,15 +34,15 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/proaula/Infrastructure/Repositories/Per
  }*/
 
  //test findById
- /*try {
-  $persona = @$repository->FindPersonaById("321");
+ try {
+  $persona = @$repository->FindPersonaByCorreo("eliabrios@gmail.com");
   echo $persona->cedula;
   echo $persona->nombres;
   
  
 } catch (Exception $error) {
   echo $error->getMessage();
-}*/
+}
 
 //testeo Update
 /*
