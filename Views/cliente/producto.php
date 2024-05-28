@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nosotros</title>
+    <title>Prodcutos</title>
     <link rel="icon" type="image/png" href="../../assets/images/Icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--Styles-->
-    <link rel="stylesheet" href="../css/carrito.css">
+    <link rel="stylesheet" href="/proaula/Views/css/carrito.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,169 +19,87 @@
 </head>
 
 <body>
+
     <header id="top">
         <div class="header-intro">
             <form action="">
-                <input type="text" name="" id="" class="buscar-input">
+                <input type="text" name="" id="accion" class="buscar-input" name="accion" value="Buscar">
                 <input type="submit" value="Buscar" class="buscar">
             </form>
             <a href="content.php" class="link-inicio">Sistema-psv</a>
             <a href="carrito.php" class="link-carrito"><i class="fa-solid fa-bag-shopping"></i> Carrito</a>
         </div>
     </header>
-    <main>
-        <div class="container">
-            <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "shop";
-            $totalPrecio = 0;
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-            if ($conn->connect_error) {
-                die("Error de conexión a la base de datos: " . $conn->connect_error);
-            }
-
-            session_start();
-            $id_usuario = $_SESSION['id_usuario'];
-            if (isset($_POST['eliminar_producto'])) {
-                $id_producto_eliminar = $_POST['eliminar_producto'];
-
-                $sql_eliminar = "DELETE FROM carrito WHERE id_usuario = '$id_usuario' AND id_producto = '$id_producto_eliminar'";
-                $conn->query($sql_eliminar);
-
-                header('Location: carrito.php');
-                exit();
-            }
-
-            $sql = "SELECT p.id, p.nombre, p.precio, p.imagen
-            FROM productos p
-            INNER JOIN carrito c ON p.id = c.id_producto
-            WHERE c.id_usuario = '$id_usuario'";
-
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                // Hay productos en el carrito, puedes mostrarlos en un bucle
-                while ($fila = $result->fetch_assoc()) {
-                    $id_producto = $fila['id'];
-                    $nombre = $fila['nombre'];
-                    $precio = $fila['precio'];
-                    $imagen = $fila['imagen'];
-                    echo '<form method="post">';
-                    echo '<img src="' . $imagen . '" alt="Imagen del producto">';
-                    echo '<p class="nombre-producto">' . $nombre . '</p>';
-                    echo '<p class="precio-producto">' . '$' . $precio . '</p>';
-                    echo '<input type="hidden" name="eliminar_producto" value="' . $id_producto . '">';
-                    echo '<input type="submit" value="Eliminar" class="btn-eliminar">';
-                    echo '</form>';
-                    $totalPrecio += $precio;
-                }
-
-                echo '<p class="total">Precio total: $' . $totalPrecio . '</p>';
-            } else {
-                echo "El carrito está vacío";
-            }
-
-            $conn->close();
-            ?>
-
-            <?php 
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "shop";
-
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-            if ($conn->connect_error) {
-                die("Error de conexión a la base de datos: " . $conn->connect_error);
-            }
-
-
-
-            $sql1 = "SELECT id_producto FROM carrito WHERE id_usuario = '$id_usuario'";
-            $result1 = $conn->query($sql1);
-
-
-            $sql = "SELECT cantidad FROM carrito WHERE id_usuario = '$id_usuario'";
-            $result = $conn->query($sql);
-
-            $canT1 = 0;
-            $canTOTAL1 = 0;
-
-            if ($result->num_rows > 0) {
-                // Iterar sobre los resultados
-                while ($row1 = $result->fetch_assoc()) {
-                    $canT = $row1["cantidad"];
-                    $canT1 = $canT1 + $canT;
-
-                if ($result1->num_rows > 0) {
-                // Iterar sobre los resultados
-                while ($row2 = $result1->fetch_assoc()) {
-                    $id_producto = $row2["id_producto"];
-                    
-                        $sql3 = "SELECT id, precio FROM productos WHERE id = '$id_producto'";
-                        $result3 = $conn->query($sql3);
-
-                         if ($result3->num_rows > 0) {
-                        
-                        while ($row3 = $result3->fetch_assoc()) {
-
-                            if($id_producto == $row3['id']){
-                            $canTOTAL =  $canT * $row3['precio'];
-                            $canTOTAL1 = $canTOTAL+$canTOTAL1 ;
-                            }
-                         
-                         }
-                        }
-
-                     }
-                    }
-
-                }
-            } 
-
-           
-
-            
-
-
-
-            $conn->close();
-            ?>
-
+    <div class="container">
+        <br>
+        <div class="alert alert-success">
+            Pantalla de mensaje...
+            <a class="badge badge-success">Ver carrito</a>
         </div>
-        <button class="btn-comprar">Comprar Todo</button>
-        <form action="../admin/agregarlistaenvio.php" method="post" class="form-envio">
-            <button type="button" class="btn-salir">X</button>
-            <h2>Formulario de envio</h2>
-            <label>Nombre</label>
-            <input type="text" name="nombre" id="">
-            <label>Telefono</label>
-            <input type="number" name="telefono" id="">
-            <label>Direccion</label>
-            <input type="text" name="direccion" id="">
-            <label>Fecha</label>
-            <input type="date" name="fecha" id="">
-            <label>Compañia de envio</label>
-            <select name="compania" id="">
-                <option value="enviya">Envi Ya</option>
-                <option value="faster">Faster</option>
-            </select>
-            <label>Medio de pago</label>
-            <select name="mediopago" id="">
-                <option value="cashHold">cashHold</option>
-                <option value="TransFi">TransFi</option>
-            </select>
-            <label>Cantidad de productos</label>
-            <p class="cantidad"><?php echo $canT1; ?></p>
-            <label>Precio Total</label>
-            <p class="total"><?php echo $canTOTAL1; ?></p>
-            <input type="submit" value="Enviar" class="btn-enviar">
-        </form>
-    </main>
-    <script src="../../assets/envio.js"></script>
+    </div>
+        <?php require_once $_SERVER['DOCUMENT_ROOT']."/proaula/Controllers/ProductoController.php";
+                $cont = new ProductoController(); $cont->AllProduct();?>
+        <div class="row">
+            <?php foreach ($productos as $producto) : ?>
+                <div class="col-3">
+                    <div class="card">
+                        <img title="<?php echo $producto->getNombre(); ?>" class="card-img-top" src="<?php echo $producto->getFoto(); ?>" alt="<?php echo $producto->getNombre(); ?>">
+                        <div class="card-body">                            <span><?php echo $producto->getNombre(); ?></span>
+                            <h5 class="card-title"><?php echo $producto->getPrecio(); ?>$</h5>
+                            <p class="card-text"><?php echo $producto->getDescripcion(); ?></p>
+                            <!-- Puedes usar un formulario para enviar los datos del producto -->
+                            <form action="tu_controlador.php" method="POST">
+                                <input type="hidden" name="nombre" value="<?php echo $producto->getNombre(); ?>">
+                                <input type="hidden" name="precio" value="<?php echo $producto->getPrecio(); ?>">
+                                <input type="hidden" name="foto" value="<?php echo $producto->getFoto(); ?>">
+                                <input type="hidden" name="descripcion" value="<?php echo $producto->getDescripcion(); ?>">
+                                <input type="hidden" name="marca" value="<?php echo $producto->getMarca(); ?>">
+                                <button class="btn btn-primary" name="btnAccion" type="submit" value="Agregar">
+                                    Agregar al carrito
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+         
+
+
+
+
+
+    <div class="contenedor">
+        <h1>Carrito de Compras</h1>
+        <div class="cart">
+            <div class="cart-item">
+                <img src="producto1.jpg" alt="Producto 1">
+                <div class="item-details">
+                    <h2>Producto 1</h2>
+                    <p class="price">$10.00</p>
+                    <p class="quantity">Cantidad: 1</p>
+                </div>
+                <button class="remove-btn">Eliminar</button>
+            </div>
+            <div class="cart-item">
+                <img src="producto2.jpg" alt="Producto 2">
+                <div class="item-details">
+                    <h2>Producto 2</h2>
+                    <p class="price">$15.00</p>
+                    <p class="quantity">Cantidad: 2</p>
+                </div>
+                <button class="remove-btn">Eliminar</button>
+            </div>
+            <!-- Más productos pueden ser añadidos de la misma manera -->
+        </div>
+        <div class="summary">
+            <h2>Resumen del Pedido</h2>
+            <p class="total">Total: $40.00</p>
+            <button class="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>

@@ -14,10 +14,10 @@
     --dark-blue: #0a183d;
     --tipo-prenda: #dcdcdc;
 }
-
+/*
 body {
     background-color: ghostwhite;
-}
+}*/
 
 header {
     width: 100%;
@@ -88,7 +88,7 @@ header {
     letter-spacing: 0.1em;
 }
 
-.container{
+.contenedor{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-row: 1fr;
@@ -99,19 +99,19 @@ header {
     align-content: center;
 }
 
-.container form{
+.contenedor form{
     background-color: #fff;
     width: 90%;
     height: 24rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.container form:hover{
+.contenedor form:hover{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     cursor: pointer;
 }
 
-.container img{
+.contenedor img{
     display: block;
     width: 90%;
     height: 18rem;
@@ -240,4 +240,87 @@ h2{
 
 .btn-salir:hover{
     background-color: #c31432;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor {
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Estilos del carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.price {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.quantity {
+    color: #95a5a6;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Estilos del resumen del pedido */
+.summary {
+    text-align: right;
+    padding-top: 20px;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkout-btn:hover {
+    background-color: #27ae60;
 }

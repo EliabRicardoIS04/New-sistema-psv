@@ -2,10 +2,10 @@
  $vista = "contactos";
  ?>
 
-      
-        <main>
-            <div class = "contenedor">
-                <div class = "contactos">
+<link rel="stylesheet" type="text/css" href="/proaula/Views/css/contactos.css">
+        <main class="classHtml" >
+            <div class="classBody">
+                <div class="classDiv">
                     <p>INFORMACIÓN DE CONTACTO:</p> <br><br>
                     <p>Dirección: 123 Calle nueva venesia, Cartagena</p><br>
                     <p>Teléfono: (+57) 320 5722230</p><br>
@@ -13,8 +13,9 @@
                     <p>Redes sociales: <a href="https://www.facebook.com/">Facebook</a>, <a href="https://www.twitter.com/">Twitter</a></p>
 
                 </div>
-                <div class = "datos">
-                    <form action="">
+                <div>
+                <div >
+                    <form class="classform">
                         
                         <legend>CONTACTATE CON NOSOTROS</legend><br><br>
                         <label> nombre y apellido:</label>
@@ -32,6 +33,7 @@
 
                         
                     </form>
+                </div>
                 </div>
             </div>      
         </main>

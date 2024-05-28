@@ -56,17 +56,17 @@ class ClienteController
         }else{
             try{
                 if($ClienteRepository->AccesoLogin($correo,$contrasena) == 1){
-                    header("Location: ../Web/?views=login&msg=Acceso+otorgado");
+                    header("Location: ../Web/?views=servicios&msg=Acceso+otorgado");
 
                     exit();
                 }else{
-                    header("Location: ../Web/?views=login&msg=Acceso+denegado");
+                    header("Location: ../Web/?views=servicios&msg=Acceso+denegado");
 
                     exit();
                 }
 
             }catch(Exception $e){
-                header("Location: ../Views/cliente/login.php?msg=Acceso+denegado".$e);
+                header("Location: ../?views=servicios&msg=Acceso+denegado".$e);
                 exit();
             }
         }

@@ -13,7 +13,7 @@
             <li><a href="?views=principal">Inicio</a></li>
             <li><a href="?views=nosotros">Nosotros</a></li>
             <li><a href="?views=servicios">Servicios</a></li>
-            <li><a href="?views=productos">Productos</a></li>
+            <li><a href="?views=producto">Productos</a></li>
             <li><a href="?views=contactos">Contactos</a></li>
             <li><div class="line"></div></li>
             <li><a href="?views=login">Login</a></li>

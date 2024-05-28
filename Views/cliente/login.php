@@ -22,9 +22,7 @@ $controller ="/proaula/Controllers/ClienteController.php";
     <div class="classDiv">
         <h2>¡Bienvenido(a) sistema-psv!</h2>
         <p>
-            Aquí encontrarás una amplia selección de prendas de alta calidad
-            y con estilo para hombres y mujeres. ¡Gracias por elegir Coral, esperamos que
-            encuentres todo lo que buscas!
+        Descubre nuestra nueva visión de la seguridad. Una estrategia adaptable, evolutiva y predictiva, con la que crecemos junto a nuestros clientes. En ella, gracias a la combinación de profesionales altamente cualificados, la tecnología y los datos, prevenimos y respondemos de forma adecuada a situaciones no programadas 
         </p>
     </div>
     <form class="classform" action="<?php echo $controller; ?>" method="post">
